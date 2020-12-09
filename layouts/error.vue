@@ -1,12 +1,8 @@
 <template>
   <div>
-    <v-alert
-      border="bottom"
-      color="pink darken-1"
-      class="red"
-      dark
-    >
-      I'm an alert with a bottom border and pink color
+    <v-alert border="bottom" color="pink darken-1" class="red" dark>
+      404 Error
+      <nuxt-link to="/" color="white"> go back to home </nuxt-link>
     </v-alert>
   </div>
 </template>

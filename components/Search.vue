@@ -2,33 +2,26 @@
   <div>
     <v-container>
       <v-row class="col-12">
-        <v-text-field label="Search . . ." v-model="res"></v-text-field>
-        <p>{{res}}</p>
-        <button @click="getSearchResults(res)"></button>
+        <v-text-field label="Search . . ." v-model="input" :input="search()"></v-text-field>
       </v-row>
     </v-container>
   </div>
 </template>
 
 <script>
-import { mapActions, mapGetters } from 'vuex'
-
 export default {
-  data() {
-    return {
-      res: '',
-      
-    }
-  },
-  computed: {
-    ...mapGetters(['searchResult']),
-  },
+data() {
+  return {
+    input:''
+  }
 
-  methods: {
-    ...mapActions(['getSearchResults']),
-    
-  },
+},
+
+methods:{
+  search(){
+    this.$store.dispatch('updatePosts' , this.input)
+    this.$store.commit('setPostUpdate' , this.input)
+  }
+}
 }
 </script>
-
-<style lang="scss" scoped></style>

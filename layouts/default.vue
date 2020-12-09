@@ -1,9 +1,9 @@
 <template>
 <v-app>
-  <section class="">
+  <section >
     <div>
       <ToolBar/>
-      <nuxt/>
+      <nuxt class="container col-12" />
     </div>
   </section>
   </v-app> 

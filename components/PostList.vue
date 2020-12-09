@@ -2,33 +2,33 @@
   <div>
     <v-container>
       <v-row>
-        <v-col v-for="(post , index) in posts" :key="index" cols="12" sm="4">
+        <v-col v-for="(post, index) in posts" :key="index" cols="12" sm="4" elevation="9">
           <Post
-        :id="post.id"
-        :userId="post.userId"
-        :title="post.title"
-        :body="post.body"
-        
-       
-           />
+            :id="post.id"
+            :userId="post.userId"
+            :title="post.title"
+            :body="post.body"
+          />
         </v-col>
       </v-row>
     </v-container>
   </div>
 </template>
+
 <script>
 export default {
-  data() {
-    return {
-      posts: [],
-    }
-  },
-  async fetch() {
-    this.posts = await fetch(
-      'https://jsonplaceholder.typicode.com/posts?_limit=10'
-    ).then((res) => res.json())
+
+
+  props: {
+    posts: {
+      type: Array,
+      required: true,
+    },
   },
 }
 </script>
+
+
+
 
 <style lang="scss" scoped></style>
