@@ -4,6 +4,7 @@
     <div>
       <ToolBar/>
       <nuxt class="container col-12" />
+      <Footer />
     </div>
   </section>
   </v-app> 
@@ -11,9 +12,11 @@
 
 <script>
 import ToolBar from '~/components/Toolbar.vue';
+import Footer from '~/components/Footer.vue';
 export default {
     components: {
-      ToolBar
+      ToolBar,
+      Footer
     }
 }
 </script>
