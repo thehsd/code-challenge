@@ -22,9 +22,13 @@ const store = () => {
       getComments(state, comments) {
         state.comments = comments
       },
-      
+
       updatePosts(state, payload) {
         state.postListUpd = payload
+      },
+
+      sortbyValue(state, { value, userId }) {
+        state.posts.find(post=>userId===userId)
       },
     },
 
@@ -57,6 +61,9 @@ const store = () => {
           return post.title.includes(input)
         })
         commit('updatePosts', resSearch)
+      },
+      sortBy({ commit }, { value, userId }) {
+        commit('sortbyValue', { value, userId })
       },
     },
 

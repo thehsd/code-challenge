@@ -20,7 +20,6 @@ data() {
 methods:{
   search(){
     this.$store.dispatch('updatePosts' , this.input)
-    this.$store.commit('setPostUpdate' , this.input)
   }
 }
 }
